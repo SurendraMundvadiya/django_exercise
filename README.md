@@ -11,7 +11,7 @@ please install virtualenv
 >>> python -m virtualenv env
 >>> .\env\Scripts\activate
 
->>> git clone 
+>>> git clone https://github.com/Surendra-Mundvadiya/django_exercise.git
 >>> cd django_exercise
 >>> pip install requirment.txt
 >>> python manage.py runserver
