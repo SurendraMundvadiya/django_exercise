@@ -15,3 +15,12 @@ class CustomAuthToken(ObtainAuthToken):
             'username': user.username,
             'email': user.email
         })
+
+class Logout(ObtainAuthToken):
+    def post(self, request, *args, **kwargs):
+        try:
+            token = request.META['HTTP_AUTHORIZATION'].split(' ')[1]
+            Token.objects.get(key=token).delete()
+            return Response({'message': 'logout successfully'})
+        except:
+            return Response({'message': 'logout failed'})
